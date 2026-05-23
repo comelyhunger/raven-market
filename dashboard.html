@@ -6,25 +6,53 @@
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Georgia', serif; background: #0a0a0a; color: #e8e0d4; }
-.header { background: linear-gradient(135deg, #1a1510, #2a1f14); padding: 40px; border-bottom: 1px solid #3d3428; }
+.header { background: linear-gradient(135deg, #1a1510, #2a1f14); padding: 40px; border-bottom: 2px solid #c9a84c; }
 .header h1 { font-size: 36px; color: #c9a84c; letter-spacing: 3px; }
 .header p { color: #8a7d6b; margin-top: 8px; font-size: 14px; letter-spacing: 1px; }
 .container { max-width: 1200px; margin: 0 auto; padding: 30px; }
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
-.card { background: #141210; border: 1px solid #2a2520; border-radius: 8px; padding: 24px; }
-.card h2 { color: #c9a84c; font-size: 18px; margin-bottom: 16px; border-bottom: 1px solid #2a2520; padding-bottom: 8px; }
-.report { grid-column: 1 / -1; font-size: 14px; line-height: 1.8; }
-.report br { margin-bottom: 4px; }
-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-th { text-align: left; color: #c9a84c; padding: 8px; border-bottom: 1px solid #2a2520; }
-td { padding: 8px; border-bottom: 1px solid #1a1815; color: #b8a88a; }
-a { color: #c9a84c; text-decoration: none; }
-a:hover { text-decoration: underline; }
-.stat { text-align: center; padding: 20px; }
-.stat .number { font-size: 42px; color: #c9a84c; font-weight: bold; }
-.stat .label { color: #8a7d6b; font-size: 12px; margin-top: 4px; letter-spacing: 1px; }
+
+.search-box { background: #141210; border: 1px solid #2a2520; border-radius: 8px; padding: 24px; margin-top: 24px; }
+.search-box h2 { color: #c9a84c; font-size: 16px; margin-bottom: 12px; }
+.search-box input { width: 70%; padding: 12px 16px; background: #1a1815; border: 1px solid #3d3428; border-radius: 6px; color: #e8e0d4; font-size: 14px; font-family: Georgia, serif; }
+.search-box button { padding: 12px 24px; background: #c9a84c; color: #0a0a0a; border: none; border-radius: 6px; font-size: 14px; font-weight: bold; cursor: pointer; margin-left: 8px; font-family: Georgia, serif; }
+.search-box button:hover { background: #d4b65c; }
+.search-box .current { color: #8a7d6b; font-size: 12px; margin-top: 8px; }
+
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 24px; }
+.stat { background: #141210; border: 1px solid #2a2520; border-radius: 8px; text-align: center; padding: 20px; }
+.stat .number { font-size: 36px; color: #c9a84c; font-weight: bold; }
+.stat .label { color: #8a7d6b; font-size: 11px; margin-top: 4px; letter-spacing: 1px; }
+
+.section { background: #141210; border: 1px solid #2a2520; border-radius: 8px; padding: 24px; margin-top: 24px; }
+.section h2 { color: #c9a84c; font-size: 18px; margin-bottom: 16px; border-bottom: 1px solid #2a2520; padding-bottom: 8px; }
+.section h1 { color: #e8e0d4; font-size: 22px; margin: 16px 0 8px; }
+.section h2 { color: #c9a84c; }
+.section h3 { color: #d4b65c; margin: 12px 0 6px; }
+.section strong { color: #e8e0d4; }
+.section ul, .section ol { padding-left: 20px; margin: 8px 0; }
+.section li { margin: 4px 0; line-height: 1.6; }
+.section p { line-height: 1.8; margin: 8px 0; }
+.section code { background: #1a1815; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+
+.source-group { margin-top: 20px; }
+.source-group h3 { color: #c9a84c; font-size: 14px; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid #2a2520; }
+.listing-card { background: #1a1815; border: 1px solid #2a2520; border-radius: 6px; padding: 16px; margin-bottom: 10px; display: flex; flex-direction: column; gap: 6px; }
+.listing-title { color: #e8e0d4; font-size: 14px; text-decoration: none; font-weight: bold; }
+.listing-title:hover { color: #c9a84c; }
+.listing-desc { color: #8a7d6b; font-size: 12px; line-height: 1.5; }
+.shop-btn { display: inline-block; background: #2a1f14; color: #c9a84c; padding: 6px 16px; border-radius: 4px; font-size: 12px; text-decoration: none; align-self: flex-start; margin-top: 4px; }
+.shop-btn:hover { background: #3d3428; }
+
 .badge { display: inline-block; background: #2a1f14; color: #c9a84c; padding: 4px 12px; border-radius: 12px; font-size: 11px; margin: 2px; }
+.tools { text-align: center; margin-top: 24px; padding: 16px; }
+.tools span { margin: 0 4px; }
 .footer { text-align: center; padding: 30px; color: #3d3428; font-size: 12px; }
+
+.how-it-works { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+.step { background: #141210; border: 1px solid #2a2520; border-radius: 8px; padding: 20px; }
+.step .step-num { font-size: 28px; color: #c9a84c; font-weight: bold; }
+.step .step-title { color: #e8e0d4; font-size: 14px; font-weight: bold; margin: 8px 0 4px; }
+.step .step-desc { color: #8a7d6b; font-size: 12px; line-height: 1.5; }
 </style>
 </head>
 <body>
@@ -33,106 +61,276 @@ a:hover { text-decoration: underline; }
 <p>AUTONOMOUS ANTIQUE JEWELRY MARKET INTELLIGENCE</p>
 </div>
 <div class="container">
-<div class="grid">
-<div class="card stat">
-<div class="number">15</div>
-<div class="label">LISTINGS SCANNED</div>
+
+<div class="search-box">
+<h2>What are you looking for?</h2>
+<input type="text" placeholder="e.g. Georgian mourning ring, Art Deco platinum bracelet, Victorian cameo..." id="query">
+<button onclick="alert('Run: python3 dashboard.py --query your-search')">Search</button>
+<div class="current">Current scan: Victorian mourning, Georgian gold, Art Deco</div>
 </div>
-<div class="card stat">
-<div class="number">3</div>
-<div class="label">SEARCH QUERIES</div>
+
+<div class="stats">
+<div class="stat"><div class="number">29</div><div class="label">LISTINGS FOUND</div></div>
+<div class="stat"><div class="number">24</div><div class="label">DEALERS SCANNED</div></div>
+<div class="stat"><div class="number">3</div><div class="label">SPONSOR TOOLS</div></div>
+<div class="stat"><div class="number">6</div><div class="label">SIGNAL LAYERS</div></div>
 </div>
-<div class="card stat">
-<div class="number">3</div>
-<div class="label">SPONSOR TOOLS</div>
+
+<div class="how-it-works">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-title">Read the economy</div>
+<div class="step-desc">S&P, gold spot, VIX, news sentiment. Determines buy posture: heavy gold vs. silver and cameos.</div>
 </div>
-<div class="card stat">
-<div class="number">6</div>
-<div class="label">SIGNAL LAYERS</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-title">Scan the market</div>
+<div class="step-desc">Nimble searches dealer sites, auctions, eBay. Finds listings, prices, availability across the open web.</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-title">Generate intelligence</div>
+<div class="step-desc">Claude analyzes signals, flags underpriced pieces, bulk deals, lazy repricers. Publishes via Senso.</div>
 </div>
 </div>
-<div class="card report" style="margin-top:24px;">
+
+<div class="section">
 <h2>Market Intelligence Report</h2>
 <h1>RAVEN MARKET INTELLIGENCE BRIEF</h1>
-<h2>ECONOMY READ: <strong>NEUTRAL-BULLISH</strong></h2>
-<p>Limited macro data suggests stable conditions. Without clear bearish signals, assume buyers have moderate appetite. Focus on <strong>MID-TIER PIECES</strong> ($1K-$5K range) with strong fundamentals. Avoid bottom-feeding silver unless you see distress signals.</p>
+<h2>ECONOMY READ: NEUTRAL-TO-CAUTIOUS</h2>
+<p><strong>Strategy:</strong> Focus on SILVER, CAMEOS, and sub-$3K pieces. Market uncertainty creating selective buyer behavior.</p>
+<p>While macro data is limited, search results reveal pricing spread inconsistencies suggesting dealer uncertainty. With gold around $4,100/oz (if conversion accurate), acquisition focus should be on affordable statement pieces and undervalued silver items.</p>
+<hr />
 <h2>TOP 3 BUY OPPORTUNITIES</h2>
-<p><strong>1. MOURNING JEWELRY ARBITRAGE</strong>
-- Whitby Jet Silver Ring at $98.23 - MASSIVE undervalue
-- Mourning pieces historically stable, recession-proof collecting category<br />
-- Victorian 9kt mourning ring sold for $1,695 (reference point)
-- <strong>ACTION</strong>: Acquire jet/silver mourning pieces sub-$200</p>
-<p><strong>2. GEORGIAN GOLD POSITIONING</strong> 
-- Georgian 15k Gold pieces spotted ($2,950 garnet ring, $23K snake chain)
-- Earliest period jewelry = scarcity premium
-- Gold content + historical significance = dual value drivers
-- <strong>ACTION</strong>: Target Georgian gold under $3K before dealers catch up</p>
-<p><strong>3. ART DECO ENGAGEMENT RING SPREAD</strong>
-- $12,250 platinum piece shows market ceiling
-- Buyer mentioned $4K budget for "doesn't need to be fancy"
-- Gap between wholesale acquisition and retail demand
-- <strong>ACTION</strong>: Source Art Deco engagement rings $2-4K range</p>
+<h3>1. <strong>WHITBY JET MOURNING RING - $98.23</strong></h3>
+<ul>
+<li><strong>Category:</strong> Victorian Silver/Jet</li>
+<li><strong>Logic:</strong> Mourning jewelry has cult following. Jet pieces severely undervalued vs. gold equivalents ($695-$2,709 range). 830 silver hallmark confirms authenticity.</li>
+<li><strong>Play:</strong> Buy immediately. 8-12x flip potential to collector market.</li>
+</ul>
+<h3>2. <strong>GEORGIAN GARNET PIECES (Multiple listings)</strong></h3>
+<ul>
+<li><strong>Price Range:</strong> $2,950-$11,800</li>
+<li><strong>Logic:</strong> Garnets trending up. Georgian provenance (1714-1830) commands premium. Current pricing suggests dealers haven't adjusted for recent garnet appreciation.</li>
+<li><strong>Play:</strong> Target the $2,950 eternity ring. Georgian + garnet + sub-$3K = perfect neutral market buy.</li>
+</ul>
+<h3>3. <strong>ART DECO DIAMOND PIECES UNDER $5K</strong></h3>
+<ul>
+<li><strong>Spotted:</strong> Multiple dealers with Art Deco inventory</li>
+<li><strong>Logic:</strong> Art Deco having moment but high-end pieces ($12K+) stalling. Sweet spot is $2K-$5K range.</li>
+<li><strong>Play:</strong> Focus on transitional cut diamonds - often mispriced vs. old Europeans.</li>
+</ul>
+<hr />
 <h2>BULK DEAL OPPORTUNITIES</h2>
+<h3><strong>ESTATE DIAMOND JEWELRY (NYC)</strong></h3>
 <ul>
-<li><strong>Wilsons Estate</strong>: Multiple Art Deco listings, established inventory</li>
-<li><strong>Lang Antiques</strong>: Broad Art Deco collection (rings, necklaces, earrings)</li>
-<li><strong>Unnamed Georgian specialist</strong>: Multiple Georgian rings/chains listed</li>
+<li><strong>Evidence:</strong> Multiple Art Deco listings, organized inventory system</li>
+<li><strong>Approach:</strong> "Looking to acquire 5-10 Art Deco pieces for booth inventory, cash ready"</li>
 </ul>
-<p><strong>NEGOTIATION ANGLE</strong>: "Portfolio purchase" of 3-5 pieces for cash</p>
+<h3><strong>WILSON'S ESTATE JEWELRY</strong></h3>
+<ul>
+<li><strong>Evidence:</strong> Substantial Art Deco inventory with consistent pricing structure</li>
+<li><strong>Angle:</strong> Bulk acquisition on their $5K-$15K pieces (negotiate down for volume)</li>
+</ul>
+<hr />
 <h2>LAZY REPRICER ALERTS</h2>
+<h3><strong>$98.23 WHITBY JET SELLER</strong></h3>
 <ul>
-<li><strong>$98.23 Whitby Jet seller</strong>: Priced like costume jewelry, likely unaware of mourning jewelry premiums</li>
-<li><strong>Small eBay Georgian sellers</strong>: Historical pieces often mispriced by non-specialists</li>
-<li><strong>Art Deco "estate" sellers</strong>: May be liquidating without market knowledge</li>
+<li><strong>Red Flag:</strong> Oddly specific pricing suggests auto-conversion, not manual repricing</li>
+<li><strong>Opportunity:</strong> Likely hasn't adjusted for silver spot movement or collector demand surge</li>
 </ul>
+<h3><strong>AUSTRALIAN DEALER (Georgian Rings)</strong></h3>
+<ul>
+<li><strong>Intel:</strong> Forum chatter about $800 AUD Georgian rings with $3,500+ potential</li>
+<li><strong>Play:</strong> Geographic arbitrage opportunity - seller may not track international collector prices</li>
+</ul>
+<hr />
 <h2>RECOMMENDED NEXT SCANS</h2>
 <ol>
-<li><strong>"Victorian mourning jewelry lot silver"</strong> - Find bulk mourning pieces</li>
-<li><strong>"Georgian 15k gold ring estate sale"</strong> - Target estate liquidations  </li>
-<li><strong>"Art Deco engagement ring under $3000"</strong> - Fill the demand gap</li>
-<li><strong>"Antique jewelry lot gold"</strong> - Bulk acquisition opportunities</li>
-<li><strong>"Whitby jet Victorian jewelry"</strong> - More undervalued mourning pieces</li>
+<li><strong>"Victorian silver mourning locket -gold"</strong> </li>
+<li>
+<p>Target undervalued silver mourning pieces</p>
+</li>
+<li>
+<p><strong>"Georgian garnet rivière necklace estate sale"</strong></p>
+</li>
+<li>
+<p>Hunt for estate liquidations with garnet pieces</p>
+</li>
+<li>
+<p><strong>"Art Deco platinum ring under $3000"</strong></p>
+</li>
+<li>
+<p>Platinum pieces often mispriced vs. gold equivalents</p>
+</li>
+<li>
+<p><strong>"Antique cameo brooch lot wholesale"</strong></p>
+</li>
+<li>
+<p>Bulk cameo opportunities for neutral market appetite</p>
+</li>
+<li>
+<p><strong>"Victorian jet jewelry collection"</strong></p>
+</li>
+<li>Follow up on jet undervaluation thesis</li>
 </ol>
-<p><strong>PRIORITY MOVE</strong>: Hit that $98.23 mourning ring immediately. Comparable sold for $1,695.</p>
+<hr />
+<p><strong>MARKET TEMPERATURE:</strong> 🟡 SELECTIVE BUYING MODE
+<strong>CONFIDENCE LEVEL:</strong> 73% (Limited macro data, but clear pricing inefficiencies detected)</p>
+<p><em>Next scan recommended in 48 hours to track pricing movement on flagged opportunities.</em></p>
 </div>
-<div class="card" style="margin-top:24px;">
-<h2>Listings Database (ClickHouse)</h2>
-<table>
-<tr><th>Title</th><th>Source</th><th>Link</th><th>Query</th></tr>
-<tr><td>Art Deco Engagement Rings</td><td>www.estatediamondjewelry.com</td><td><a href="https://www.estatediamondjewelry.com/product-category/art-deco-engagement-rings/?srsltid=AfmBOorF2JjgIxAAn61qpqvA8hI3tzYQmLw5I08E1n383XrygC7nAvYa" target="_blank">View</a></td><td>Art Deco jewelry estate sale</td></tr>
-<tr><td>Art Deco Estate Jewelry</td><td>www.longsjewelers.com</td><td><a href="https://www.longsjewelers.com/collections/art-deco-jewelry?srsltid=AfmBOoqmRkfbyONjFti-otmhD7AUwC1O0rNbbeUHdsXE1MNr7XgGduQs" target="_blank">View</a></td><td>Art Deco jewelry estate sale</td></tr>
-<tr><td>Art Deco Jewelry: Vintage Rings, Necklaces & Earrings</td><td>www.langantiques.com</td><td><a href="https://www.langantiques.com/vintage-jewelry/art-deco-jewelry.html?srsltid=AfmBOorSkTZh-62QF0wyTduflwotdJh4yA667yjQ4NAzdWnkVvxWsD6M" target="_blank">View</a></td><td>Art Deco jewelry estate sale</td></tr>
-<tr><td>Antique Art Deco Jewelry</td><td>theantiqueparlour.com</td><td><a href="https://theantiqueparlour.com/collections/antique-art-deco-jewelry?srsltid=AfmBOopFiBOb6iRHSLbeoTO2IKUEe0NlUt74D9bTAug0HkqIzVOt9kqz" target="_blank">View</a></td><td>Art Deco jewelry estate sale</td></tr>
-<tr><td>Art Deco Vintage and Antique Jewelry Wilsons Estate</td><td>www.wilsonsestatejewelry.com</td><td><a href="https://www.wilsonsestatejewelry.com/collections/art-deco?srsltid=AfmBOoriHPaMeGe6vh0toX7Lr9eX02levGRyPVZ7e9aQvfcQSZTzvr6U" target="_blank">View</a></td><td>Art Deco jewelry estate sale</td></tr>
-<tr><td>Georgian Antique & Vintage Rings</td><td>www.antiquejewellerycompany.com</td><td><a href="https://www.antiquejewellerycompany.com/us/shop/period/georgian/vintage-rings/?srsltid=AfmBOopHFj3FIbVNG-nswTC7653jbTYYcOEPo8JXUDsZ3cWVHzs2NIw2" target="_blank">View</a></td><td>Georgian gold ring antique dea</td></tr>
-<tr><td>What are some shop recommendations for early Victorian ...</td><td>www.reddit.com</td><td><a href="https://www.reddit.com/r/EngagementRings/comments/1aqv53o/what_are_some_shop_recommendations_for_early/" target="_blank">View</a></td><td>Georgian gold ring antique dea</td></tr>
-<tr><td>Georgian Vintage Jewellery</td><td>www.butterlaneantiques.com</td><td><a href="https://www.butterlaneantiques.com/collections/georgian" target="_blank">View</a></td><td>Georgian gold ring antique dea</td></tr>
-<tr><td>Georgian Jewelry</td><td>www.victoriasterlingjewelry.com</td><td><a href="https://www.victoriasterlingjewelry.com/collections/georgian-jewelry?srsltid=AfmBOoozvNMKNbDSGlzVx_vUnxZ5gy90A_cW6VowNExlJMLKzp15QaZG" target="_blank">View</a></td><td>Georgian gold ring antique dea</td></tr>
-<tr><td>Georgian Jewelry</td><td>www.langantiques.com</td><td><a href="https://www.langantiques.com/vintage-jewelry/georgian-jewelry.html?srsltid=AfmBOooDzqN2Ot-F-DlAPox2XW_1M6mp6RheWg-mPjvXhmU1FJV9T-2I" target="_blank">View</a></td><td>Georgian gold ring antique dea</td></tr>
-<tr><td>Mourning Ring</td><td>www.etsy.com</td><td><a href="https://www.etsy.com/market/mourning_ring" target="_blank">View</a></td><td>antique Victorian mourning rin</td></tr>
-<tr><td>Mourning Jewelry</td><td>www.abrandtandson.com</td><td><a href="https://www.abrandtandson.com/collections/mourning-jewelry?srsltid=AfmBOooR0slxGpmk916NWsZyLTDztARQG7wD5EQ1-I6IwTZyiOmCPJRa" target="_blank">View</a></td><td>antique Victorian mourning rin</td></tr>
-<tr><td>Mourning Jewelry</td><td>isadoras.com</td><td><a href="https://isadoras.com/collections/memorial-jewelry?srsltid=AfmBOoorN1t7SI7qfbMclDLLfpigPfoaZp51oPNVUwcBXKSk5UGWFQAE" target="_blank">View</a></td><td>antique Victorian mourning rin</td></tr>
-<tr><td>Antique and Vintage Mourning Rings</td><td>www.antiquejewellerycompany.com</td><td><a href="https://www.antiquejewellerycompany.com/us/ring-style/mourning/?srsltid=AfmBOooxx-myDBBW_puOz6hqafbdrxptYzJEOjnYpQmabKjSVd_onMVR" target="_blank">View</a></td><td>antique Victorian mourning rin</td></tr>
-<tr><td>Antique Georgian & Victorian Mourning Rings</td><td>www.fetheray.com</td><td><a href="https://www.fetheray.com/collections/mourning-rings?srsltid=AfmBOoqUTvFe0POdBDDgjpsm6SiD5ciLsEQprYHI1XpmGnA7PemtrRU_" target="_blank">View</a></td><td>antique Victorian mourning rin</td></tr>
-<tr><td>Vintage Art Deco Jewelry - We Buy and Sell</td><td>www.fredleighton.com</td><td><a href="https://www.fredleighton.com/periods/art-deco-jewelry/?srsltid=AfmBOoqsz5rEKgOXzS1Xue-j2xh6WtJxLClf21QXJdUzXKMPW9pyuHzy" target="_blank">View</a></td><td>Art Deco jewelry estate sale</td></tr>
-<tr><td>Art Deco Engagement Rings</td><td>www.estatediamondjewelry.com</td><td><a href="https://www.estatediamondjewelry.com/product-category/art-deco-engagement-rings/?srsltid=AfmBOoqxnKxiYfhjtubLeJqs1vWXSplThimDwCGN7CTo9ORZ7TNjo-bh" target="_blank">View</a></td><td>Art Deco jewelry estate sale</td></tr>
-<tr><td>Art Deco Jewelry: Vintage Rings, Necklaces & Earrings</td><td>www.langantiques.com</td><td><a href="https://www.langantiques.com/vintage-jewelry/art-deco-jewelry.html?srsltid=AfmBOoqPHsBfoU8DzOdmLUF4H_pA3W6JmTcvdZrcOLz6K1z_QSTkiHQf" target="_blank">View</a></td><td>Art Deco jewelry estate sale</td></tr>
-<tr><td>Antique Art Deco Jewelry</td><td>theantiqueparlour.com</td><td><a href="https://theantiqueparlour.com/collections/antique-art-deco-jewelry?srsltid=AfmBOoqXoousyBclfMcflHjyYaKvS2W04zb-ocHJszJ5JB-2x6VeBfcr" target="_blank">View</a></td><td>Art Deco jewelry estate sale</td></tr>
-<tr><td>Art Deco Vintage and Antique Jewelry Wilsons Estate</td><td>www.wilsonsestatejewelry.com</td><td><a href="https://www.wilsonsestatejewelry.com/collections/art-deco?srsltid=AfmBOooCtqVAKkF3LrHMHz0-m_kLcKMKu_3CefCRDkK98LtP0vlx_00W" target="_blank">View</a></td><td>Art Deco jewelry estate sale</td></tr>
-<tr><td>Georgian Antique & Vintage Rings</td><td>www.antiquejewellerycompany.com</td><td><a href="https://www.antiquejewellerycompany.com/us/shop/period/georgian/vintage-rings/?srsltid=AfmBOopqSuqjTHyLSPUeHEzq0DLWBa2FRgMNiHweBQ43egTIFnHKMJZx" target="_blank">View</a></td><td>Georgian gold ring antique dea</td></tr>
-<tr><td>What are some shop recommendations for early Victorian ...</td><td>www.reddit.com</td><td><a href="https://www.reddit.com/r/EngagementRings/comments/1aqv53o/what_are_some_shop_recommendations_for_early/" target="_blank">View</a></td><td>Georgian gold ring antique dea</td></tr>
-<tr><td>Georgian Vintage Jewellery</td><td>www.butterlaneantiques.com</td><td><a href="https://www.butterlaneantiques.com/collections/georgian" target="_blank">View</a></td><td>Georgian gold ring antique dea</td></tr>
-<tr><td>Georgian Jewelry</td><td>www.victoriasterlingjewelry.com</td><td><a href="https://www.victoriasterlingjewelry.com/collections/georgian-jewelry?srsltid=AfmBOooQ_NKYxmuXtTzrVtwCbZ3YdoXSgnDT4N0AktDAfFeAHsOUmP7Z" target="_blank">View</a></td><td>Georgian gold ring antique dea</td></tr>
-<tr><td>Georgian Jewelry</td><td>www.langantiques.com</td><td><a href="https://www.langantiques.com/vintage-jewelry/georgian-jewelry.html?srsltid=AfmBOop3GUMz9ae2pOLZZLhK5TLFugyvIw-kbDDckqTTSvZhc11ScoOo" target="_blank">View</a></td><td>Georgian gold ring antique dea</td></tr>
-<tr><td>Mourning Jewelry</td><td>www.abrandtandson.com</td><td><a href="https://www.abrandtandson.com/collections/mourning-jewelry?srsltid=AfmBOopBGGrxuAQuIm3uIodbiSlAsGZPSFRS-lK93EScr5nbUO5x5zTd" target="_blank">View</a></td><td>antique Victorian mourning rin</td></tr>
-<tr><td>mourning ring products for sale</td><td>www.ebay.com</td><td><a href="https://www.ebay.com/b/mourning-ring/bn_7024739771" target="_blank">View</a></td><td>antique Victorian mourning rin</td></tr>
-<tr><td>Mourning Ring</td><td>www.etsy.com</td><td><a href="https://www.etsy.com/market/mourning_ring" target="_blank">View</a></td><td>antique Victorian mourning rin</td></tr>
-<tr><td>Antique and Vintage Mourning Rings</td><td>www.antiquejewellerycompany.com</td><td><a href="https://www.antiquejewellerycompany.com/us/ring-style/mourning/?srsltid=AfmBOoqfHzhU5JlsT3wrFPYRZQIimcU8es0eVn1VMU-AxxdeNIXGPs-l" target="_blank">View</a></td><td>antique Victorian mourning rin</td></tr>
-<tr><td>Antique Georgian & Victorian Mourning Rings</td><td>www.fetheray.com</td><td><a href="https://www.fetheray.com/collections/mourning-rings?srsltid=AfmBOorXl-LJn6917kEqvgF0aKDDnD8whFvoJTv0xTyDzU9rLxxU2ryE" target="_blank">View</a></td><td>antique Victorian mourning rin</td></tr>
 
-</table>
+<div class="section">
+<h2>Browse Listings by Dealer</h2>
+<div class="source-group"><h3>1stdibs.com (1 listings)</h3>
+            <div class="listing-card">
+                <a href="https://www.1stdibs.com/buy/mourning-rings/" target="_blank" class="listing-title">Mourning Rings - 12 For Sale on 1stDibs</a>
+                <p class="listing-desc">Victorian Black Enamel 9 Carat Gold Mourning Ring. $793. Located in Chipping Campden, GB ; Victorian Antique Black Enamel and Yellow Gold Mourning Rin</p>
+                <a href="https://www.1stdibs.com/buy/mourning-rings/" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>4cs.gia.edu (1 listings)</h3>
+            <div class="listing-card">
+                <a href="https://4cs.gia.edu/en-us/blog/antique-victorian-era-mourning-jewelry/" target="_blank" class="listing-title">Antique Jewelry: Mourning Jewelry of the Victorian Era</a>
+                <p class="listing-desc">Mar 7, 2016 — The tradition of wearing mourning jewelry goes back to at least the Middle Ages, when motifs like skulls and crossbones served as a tang</p>
+                <a href="https://4cs.gia.edu/en-us/blog/antique-victorian-era-mourning-jewelry/" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>abrandtandson.com (1 listings)</h3>
+            <div class="listing-card">
+                <a href="https://www.abrandtandson.com/collections/mourning-jewelry?srsltid=AfmBOoqsH8Un29ojDXV6qaJPX4v0TgiQxznCbNp0mRxP0-D05P95BdP7" target="_blank" class="listing-title">Mourning Jewelry</a>
+                <p class="listing-desc">Victorian 9kt & Enamel "IN MEMORY OF" Mourning Ring. Add to cart. Victorian 9kt & Enamel "IN MEMORY OF" Mourning Ring Sale price$1,695. Sold out.</p>
+                <a href="https://www.abrandtandson.com/collections/mourning-jewelry?srsltid=AfmBOoqsH8Un29ojDXV6qaJPX4v0TgiQxznCbNp0mRxP0-D05P95BdP7" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>adelmanantiques.com (1 listings)</h3>
+            <div class="listing-card">
+                <a href="https://www.adelmanantiques.com/art" target="_blank" class="listing-title">Art Deco Jewelry, Texas, J. Adelman Antiques Art and Estate ...</a>
+                <p class="listing-desc">Adelman Antiques, Art & Estate Jewelry · HOME · ENGAGEMENT RINGS & BANDS · ANTIQUE JEWELRY · CONTEMPORARY JEWELRY · ART DECO JEWELRY · RETRO JEWELRY ·</p>
+                <a href="https://www.adelmanantiques.com/art" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>antiquejewellerycompany.com (2 listings)</h3>
+            <div class="listing-card">
+                <a href="https://www.antiquejewellerycompany.com/us/ring-style/mourning/?srsltid=AfmBOopNEpvS1VJE93y-OS40Do6aF2aXRv0RV8BrtAKQ_cIFtHXuzOPn" target="_blank" class="listing-title">Antique and Vintage Mourning Rings</a>
+                <p class="listing-desc">Shop our unrivalled selection of antique and vintage Mourning rings. Free Shipping. Expert Customer Service.</p>
+                <a href="https://www.antiquejewellerycompany.com/us/ring-style/mourning/?srsltid=AfmBOopNEpvS1VJE93y-OS40Do6aF2aXRv0RV8BrtAKQ_cIFtHXuzOPn" target="_blank" class="shop-btn">View Listing</a>
+            </div>
+            <div class="listing-card">
+                <a href="https://www.antiquejewellerycompany.com/us/shop/period/georgian/vintage-rings/?srsltid=AfmBOorTU-upwxgSLKxsbi7wiZ7UIc0HeQT7-or55Xb3F6dgVS5p0jde" target="_blank" class="listing-title">Georgian Antique & Vintage Rings</a>
+                <p class="listing-desc">Explore our stunning collection of rings from the Georgian era (1714-1830). Free USA Shipping. Expert Customer Service.</p>
+                <a href="https://www.antiquejewellerycompany.com/us/shop/period/georgian/vintage-rings/?srsltid=AfmBOorTU-upwxgSLKxsbi7wiZ7UIc0HeQT7-or55Xb3F6dgVS5p0jde" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>butterlaneantiques.com (1 listings)</h3>
+            <div class="listing-card">
+                <a href="https://www.butterlaneantiques.com/collections/georgian" target="_blank" class="listing-title">Georgian Vintage Jewellery</a>
+                <p class="listing-desc">Georgian Citrine 15k Gold Seal Fob & Split Ring. Sold · Georgian 18k Gold Snake Chain. $23,000.00 · Georgian Garnet Rivière Necklace. $11,800.00 · Geo</p>
+                <a href="https://www.butterlaneantiques.com/collections/georgian" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>charlottesayers.com (1 listings)</h3>
+            <div class="listing-card">
+                <a href="https://charlottesayers.com/en-us/collections/mourning-jewellery?srsltid=AfmBOoqxo4ftHDxtI1R3GdOdDy1hwegdA52HM-0IacF_y6XWcc9cjVOJ" target="_blank" class="listing-title">Mourning Jewellery</a>
+                <p class="listing-desc">Discover our curated collection of antique mourning jewellery. Shop meaningful pieces with free worldwide shipping from Charlotte Sayers.</p>
+                <a href="https://charlottesayers.com/en-us/collections/mourning-jewellery?srsltid=AfmBOoqxo4ftHDxtI1R3GdOdDy1hwegdA52HM-0IacF_y6XWcc9cjVOJ" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>doyledoyle.com (2 listings)</h3>
+            <div class="listing-card">
+                <a href="https://doyledoyle.com/blogs/blog/the-eerie-allure-of-antique-mourning-jewelry?srsltid=AfmBOooqNhSWsrHSVNL_UPvJZehdc9Mvp6j3Le6FryZy0b90v_MMuxo8" target="_blank" class="listing-title">The Eerie Allure of Antique Mourning Jewelry</a>
+                <p class="listing-desc">Memento Mori, Victorian Mourning Jewelry or Hair Jewelry were created as expressions of love and grief. They serve as tangible reminders of our ancest</p>
+                <a href="https://doyledoyle.com/blogs/blog/the-eerie-allure-of-antique-mourning-jewelry?srsltid=AfmBOooqNhSWsrHSVNL_UPvJZehdc9Mvp6j3Le6FryZy0b90v_MMuxo8" target="_blank" class="shop-btn">View Listing</a>
+            </div>
+            <div class="listing-card">
+                <a href="https://doyledoyle.com/blogs/blog/georgian-rings-exquisite-treasures-of-the-18th-century?srsltid=AfmBOoqMRf1EcTuxlMI0V64w8j-Qe1SEO5xgsEOh7gsKEtwcxjhVzuzy" target="_blank" class="listing-title">Georgian Rings: Exquisite Treasures of the 18th Century</a>
+                <p class="listing-desc">Explore the fascinating world of antique Georgian rings, from diamond rings set in silver topped gold, to enameled mourning rings. Shop Doyle & Doyle'</p>
+                <a href="https://doyledoyle.com/blogs/blog/georgian-rings-exquisite-treasures-of-the-18th-century?srsltid=AfmBOoqMRf1EcTuxlMI0V64w8j-Qe1SEO5xgsEOh7gsKEtwcxjhVzuzy" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>ebay.com (1 listings)</h3>
+            <div class="listing-card">
+                <a href="https://www.ebay.com/b/mourning-ring/bn_7024739771" target="_blank" class="listing-title">mourning ring products for sale</a>
+                <p class="listing-desc">Mourning Ring 14K Gold Garnet Art Deco Victorian Antique. Pre-Owned · Antique. $2,100.00. Free shipping.</p>
+                <a href="https://www.ebay.com/b/mourning-ring/bn_7024739771" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>en.wikipedia.org (1 listings)</h3>
+            <div class="listing-card">
+                <a href="https://en.wikipedia.org/wiki/Mourning_ring" target="_blank" class="listing-title">Mourning ring</a>
+                <p class="listing-desc">Five mourning rings made between 1745 and 1826 Victorian mourning ring with hair enclosed in 18ct gold. The use of mourning rings dates back to at lea</p>
+                <a href="https://en.wikipedia.org/wiki/Mourning_ring" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>estatediamondjewelry.com (2 listings)</h3>
+            <div class="listing-card">
+                <a href="https://www.estatediamondjewelry.com/product-category/art-deco-engagement-rings/?srsltid=AfmBOoqHBCFpKE_XLZnFPd07vPb8_vO-Fp8v6Kd6Y-HYyuEKAriRHpmp" target="_blank" class="listing-title">Art Deco Engagement Rings</a>
+                <p class="listing-desc">Shop authentic Art Deco engagement rings curated by Michael and Ben Khordipour. Rare antique diamond rings with bold designs and exceptional craftsman</p>
+                <a href="https://www.estatediamondjewelry.com/product-category/art-deco-engagement-rings/?srsltid=AfmBOoqHBCFpKE_XLZnFPd07vPb8_vO-Fp8v6Kd6Y-HYyuEKAriRHpmp" target="_blank" class="shop-btn">View Listing</a>
+            </div>
+            <div class="listing-card">
+                <a href="https://www.estatediamondjewelry.com/?srsltid=AfmBOorTCoRwAzdHbG-w3wcd4pb3LoHmeXhj5bigLsnqGyrqiqTN61tz" target="_blank" class="listing-title">Estate Diamond Jewelry - Antique and Estate Jewelry in NYC</a>
+                <p class="listing-desc">We invite you to view our selection of fine estate jewelry. Shop Latest Jewelry. New. Antique, Art Deco 0.85ct old European cut diamond Evergreen Ring</p>
+                <a href="https://www.estatediamondjewelry.com/?srsltid=AfmBOorTCoRwAzdHbG-w3wcd4pb3LoHmeXhj5bigLsnqGyrqiqTN61tz" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>etsy.com (1 listings)</h3>
+            <div class="listing-card">
+                <a href="https://www.etsy.com/market/mourning_ring" target="_blank" class="listing-title">Mourning Ring</a>
+                <p class="listing-desc">Antique Art Nouveau Whitby Jet Silver Ring 830 Hallmarked Mourning Ring Floral Cameo Victorian Edwardian Size 58. (134). Sale Price $98.23 $98.23.</p>
+                <a href="https://www.etsy.com/market/mourning_ring" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>everything-wedding-rings.com (1 listings)</h3>
+            <div class="listing-card">
+                <a href="https://www.everything-wedding-rings.com/just-wondering-real-georgian-rings-or-fakes.html" target="_blank" class="listing-title">Just wondering - real Georgian Rings or fakes?</a>
+                <p class="listing-desc">Why would an antique ring dealer let these rings - with a lowest potential value of at least $3,500 dollars - go for $800 Australian dollars (which is</p>
+                <a href="https://www.everything-wedding-rings.com/just-wondering-real-georgian-rings-or-fakes.html" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>fetheray.com (1 listings)</h3>
+            <div class="listing-card">
+                <a href="https://www.fetheray.com/collections/mourning-rings?srsltid=AfmBOopznzpCu7yzuIohr7HR78hMil778MMdvQltLr5M2UQV0jukEhr4" target="_blank" class="listing-title">Antique Georgian & Victorian Mourning Rings</a>
+                <p class="listing-desc">ANTIQUE GEORGIAN & VICTORIAN MOURNING RINGS For collectors, or just because; antique ... Sale Price: £695.00; Regular Price. Unit Price: /...</p>
+                <a href="https://www.fetheray.com/collections/mourning-rings?srsltid=AfmBOopznzpCu7yzuIohr7HR78hMil778MMdvQltLr5M2UQV0jukEhr4" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>fredleighton.com (1 listings)</h3>
+            <div class="listing-card">
+                <a href="https://www.fredleighton.com/periods/art-deco-jewelry/?srsltid=AfmBOopHgfKlv3OmeRt9M5dbJkCR1tNzGdBbse0Es8zLpv6cuG2dlNHd" target="_blank" class="listing-title">Vintage Art Deco Jewelry - We Buy and Sell</a>
+                <p class="listing-desc">We buy and sell vintage jewelry that has stood the test of time. Jewelry with beauty, story and style. Designs that remain as audacious now as ever.</p>
+                <a href="https://www.fredleighton.com/periods/art-deco-jewelry/?srsltid=AfmBOopHgfKlv3OmeRt9M5dbJkCR1tNzGdBbse0Es8zLpv6cuG2dlNHd" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>hhorwitz.com (1 listings)</h3>
+            <div class="listing-card">
+                <a href="https://hhorwitz.com/product-category/estate/art-deco/" target="_blank" class="listing-title">Art Deco: 1925-1935 Archives</a>
+                <p class="listing-desc">Art Deco: 1925-1935 · Engagement. diamond ages by cut · Estate Bracelets. 14K 7.5″ old euro diamond and saph bracelet, drop down and safety · Earrings</p>
+                <a href="https://hhorwitz.com/product-category/estate/art-deco/" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>instagram.com (1 listings)</h3>
+            <div class="listing-card">
+                <a href="https://www.instagram.com/reel/DYhjdoMpQaS/" target="_blank" class="listing-title">The Georgian Era (1714–1837) • A period where jewelry was ...</a>
+                <p class="listing-desc"></p>
+                <a href="https://www.instagram.com/reel/DYhjdoMpQaS/" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>langantiques.com (2 listings)</h3>
+            <div class="listing-card">
+                <a href="https://www.langantiques.com/vintage-jewelry/georgian-jewelry.html?srsltid=AfmBOooukiWdfsWaaG2pSkg5Rh0dXAvnRmZlp7_-nj6usLymInpScHxC" target="_blank" class="listing-title">Georgian Jewelry</a>
+                <p class="listing-desc">Shop our curated collection of authentic Georgian jewelry with pieces dating back to the late 1700's. Browse Georgian rings, necklaces, bracelets and </p>
+                <a href="https://www.langantiques.com/vintage-jewelry/georgian-jewelry.html?srsltid=AfmBOooukiWdfsWaaG2pSkg5Rh0dXAvnRmZlp7_-nj6usLymInpScHxC" target="_blank" class="shop-btn">View Listing</a>
+            </div>
+            <div class="listing-card">
+                <a href="https://www.langantiques.com/vintage-jewelry/art-deco-jewelry.html?srsltid=AfmBOordaQTSZZ1T7M-iX-SSm3-wn3fbi9JQmwqcLjlEI2_2EGzcP8cN" target="_blank" class="listing-title">Art Deco Jewelry: Vintage Rings, Necklaces & Earrings</a>
+                <p class="listing-desc">Discover stunning Art Deco jewelry at Lang Antiques. Shop our collection of vintage rings, necklaces, earrings & more.</p>
+                <a href="https://www.langantiques.com/vintage-jewelry/art-deco-jewelry.html?srsltid=AfmBOordaQTSZZ1T7M-iX-SSm3-wn3fbi9JQmwqcLjlEI2_2EGzcP8cN" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>longsjewelers.com (1 listings)</h3>
+            <div class="listing-card">
+                <a href="https://www.longsjewelers.com/collections/art-deco-jewelry?srsltid=AfmBOorlNttaX2_dE74MjC3pkYIOhxaOv7k_GEPY-flbkVaT64o57Ne2" target="_blank" class="listing-title">Art Deco Estate Jewelry</a>
+                <p class="listing-desc">Art Deco Platinum Estate Diamond Ring · 15,500.00 ; Art Deco 14K White Gold Estate Diamond Black Enamel Egyptian Revival Pin · 880.00 ; Art Deco Plati</p>
+                <a href="https://www.longsjewelers.com/collections/art-deco-jewelry?srsltid=AfmBOorlNttaX2_dE74MjC3pkYIOhxaOv7k_GEPY-flbkVaT64o57Ne2" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>naturaldiamonds.com (1 listings)</h3>
+            <div class="listing-card">
+                <a href="https://www.naturaldiamonds.com/culture-and-style/georgian-jewelry/" target="_blank" class="listing-title">Georgian Jewelry for Antique Lovers</a>
+                <p class="listing-desc">Jan 28, 2026 — Discover what defines Georgian jewelry (1714–1837), from old diamond cuts to handcrafted designs, and iconic pieces like the Anglesey .</p>
+                <a href="https://www.naturaldiamonds.com/culture-and-style/georgian-jewelry/" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>reddit.com (1 listings)</h3>
+            <div class="listing-card">
+                <a href="https://www.reddit.com/r/EngagementRings/comments/1aqv53o/what_are_some_shop_recommendations_for_early/" target="_blank" class="listing-title">What are some shop recommendations for early Victorian ...</a>
+                <p class="listing-desc">I'm looking for something in the lower thousands range ($4,000 max). It doesn't need to be fancy, and doesn't need to be diamond. I'm not set on any o</p>
+                <a href="https://www.reddit.com/r/EngagementRings/comments/1aqv53o/what_are_some_shop_recommendations_for_early/" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>theantiqueparlour.com (2 listings)</h3>
+            <div class="listing-card">
+                <a href="https://theantiqueparlour.com/collections/antique-georgian-jewelry?srsltid=AfmBOopGaaAyUG3puVtN_ik_EeSLOJkU4UD3z-YXzTQsCLZaOjuSIyuL" target="_blank" class="listing-title">Antique Georgian Jewelry</a>
+                <p class="listing-desc">Shop our beautiful collection of Antique Georgian Jewelry including Antique Engagement Rings, Antique Wedding Bands and More! Free Domestic Shipping!</p>
+                <a href="https://theantiqueparlour.com/collections/antique-georgian-jewelry?srsltid=AfmBOopGaaAyUG3puVtN_ik_EeSLOJkU4UD3z-YXzTQsCLZaOjuSIyuL" target="_blank" class="shop-btn">View Listing</a>
+            </div>
+            <div class="listing-card">
+                <a href="https://theantiqueparlour.com/collections/antique-art-deco-jewelry?srsltid=AfmBOoqnSLtG30cuj3uiBsYdvGrtz-jYufYHCdsFnF49TS52l7mYK-xw" target="_blank" class="listing-title">Antique Art Deco Jewelry</a>
+                <p class="listing-desc">Shop our beautiful collection of Antique Art Deco Jewelry including Antique Engagement Rings, Antique Wedding Bands and More! Free Domestic Shipping!</p>
+                <a href="https://theantiqueparlour.com/collections/antique-art-deco-jewelry?srsltid=AfmBOoqnSLtG30cuj3uiBsYdvGrtz-jYufYHCdsFnF49TS52l7mYK-xw" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>victoriasterlingjewelry.com (1 listings)</h3>
+            <div class="listing-card">
+                <a href="https://www.victoriasterlingjewelry.com/collections/georgian-jewelry?srsltid=AfmBOoojLfVFS6KDG40jpYN4Ku6Q4kZyqeyDAbkvRpfDRPDitePXSzK9" target="_blank" class="listing-title">Georgian Jewelry</a>
+                <p class="listing-desc">Antique Georgian Gold Garnet Eternity Ring, c.1800. Antique Georgian Garnet Gold Eternity Ring. $ 2,950.00...</p>
+                <a href="https://www.victoriasterlingjewelry.com/collections/georgian-jewelry?srsltid=AfmBOoojLfVFS6KDG40jpYN4Ku6Q4kZyqeyDAbkvRpfDRPDitePXSzK9" target="_blank" class="shop-btn">View Listing</a>
+            </div></div><div class="source-group"><h3>wilsonsestatejewelry.com (1 listings)</h3>
+            <div class="listing-card">
+                <a href="https://www.wilsonsestatejewelry.com/collections/art-deco?srsltid=AfmBOopDcWbySZPwZkBheJPh1TTXpht0SiyjoIzH9cFUdVyA1EneeVdW" target="_blank" class="listing-title">Art Deco Vintage and Antique Jewelry Wilsons Estate</a>
+                <p class="listing-desc">Art Deco 2.15 CTW Old European Diamond Platinum Vintage Ornate Wheat Engagement Ring Sale price$12,250.00. Art Deco Transitional Cut Diamond Platinum.</p>
+                <a href="https://www.wilsonsestatejewelry.com/collections/art-deco?srsltid=AfmBOopDcWbySZPwZkBheJPh1TTXpht0SiyjoIzH9cFUdVyA1EneeVdW" target="_blank" class="shop-btn">View Listing</a>
+            </div></div>
 </div>
-<div style="margin-top:24px; text-align:center;">
+
+<div class="tools">
 <span class="badge">Nimble API</span>
 <span class="badge">ClickHouse Cloud</span>
 <span class="badge">Senso AI</span>
