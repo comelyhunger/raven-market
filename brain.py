@@ -22,8 +22,9 @@ Analyze these search results and macro signals. Generate a market brief.
 Search results:
 {listings}
 
-Macro signals:
-{macro_data or 'Not available'}
+Macro signals (search for the latest before analysis):
+When analyzing, pay close attnetion to the actual gold spot price, S&P 500 level, and VIX in the macro signals provided. Use the REAL numbers, do not estimate or guess.  If a specific price is not available, say "data unavailable" rather than guess.
+
 
 Generate:
 1. Economy read (bull/bear/neutral) and what that means for buying strategy
