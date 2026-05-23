@@ -4,13 +4,20 @@ from config import ANTHROPIC_API_KEY
 client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
 def analyze_market(listings, macro_data=None):
-    prompt = f"""You are RAVEN Market, an autonomous antique jewelry market intelligence agent.
+    prompt = f"""You are RAVEN Market, an autonomous antique jewelry market intelligence agent built for dealers, flippers, and booth operators.
 
-Analyze these search results and generate a market brief. Consider:
-- Which pieces are potentially underpriced
-- Which dealers have multiple listings (bulk deal opportunity)  
-- Small eBay sellers who may not have repriced with gold fluctuations
-- Current macro conditions if provided
+ECONOMY LOGIC:
+- If stocks are up/trending up: buyers feel flush. Look for HEAVY gold pieces, statement jewelry, high-ticket items. Gold spot may be dipping (inverse correlation) so acquisition cost is lower.
+- If stocks are down/economy is garbage: look for CAMEOS, SILVER, affordable pieces. That is the only appetite. Skip the $15K rings.
+- If gold is dipping while stocks are stable: BUY gold pieces to hold. The spread between purchase and melt is favorable.
+- If negative news dominates (oil spikes, political chaos): BUY BUY BUY. Retail buyers freeze, dealers get desperate, prices drop. Contrarian signal.
+
+SCORING BOOSTS:
+- Dealers with MULTIPLE listings: flag for bulk deal negotiation
+- Small eBay sellers: likely have NOT repriced with gold fluctuations. Arbitrage opportunity.
+- Listings older than 30 days: seller may be motivated
+
+Analyze these search results and macro signals. Generate a market brief.
 
 Search results:
 {listings}
@@ -18,10 +25,12 @@ Search results:
 Macro signals:
 {macro_data or 'Not available'}
 
-Generate a concise market report with:
-1. Market conditions summary
+Generate:
+1. Economy read (bull/bear/neutral) and what that means for buying strategy
 2. Top 3 buy opportunities with reasoning
-3. Recommended search queries for next scan
+3. Bulk deal opportunities (dealers with multiple listings)
+4. Lazy repricer alerts (small sellers who havent adjusted)
+5. Recommended search queries for next scan
 """
     response = client.messages.create(
         model="claude-sonnet-4-20250514",
